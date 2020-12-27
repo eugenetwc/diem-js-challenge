@@ -30,3 +30,23 @@ ageInput.onblur = function() {
         ageOutput.textContent = 'Would you mind entering your birthday?';
     }
 }
+
+// Theme
+let lightInput = document.getElementById('light');
+let darkInput = document.getElementById('dark');
+let bgDiv = document.getElementsByClassName("panel bg-dark text-white")[0];
+let themeOutput = document.getElementById('themeOutput');
+
+lightInput.oninput = function() {
+    bgDiv.classList.remove('bg-dark', 'text-white');
+    bgDiv.classList.add('bg-light', 'text-black');
+
+    themeOutput.textContent = 'You chose Dark Mode!';
+}
+
+darkInput.oninput = function() {
+    bgDiv.classList.remove('bg-light', 'text-black');
+    bgDiv.classList.add('bg-dark', 'text-white');
+
+    themeOutput.textContent = 'You chose Light Mode!';
+}
