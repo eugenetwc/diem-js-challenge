@@ -50,3 +50,43 @@ darkInput.oninput = function() {
 
     themeOutput.textContent = 'You chose Light Mode!';
 }
+
+// Skills
+let htmlButton = document.getElementById('html');
+let cssButton = document.getElementById('css');
+let jsButton = document.getElementById('javascript');
+
+let skillsInput = htmlButton.parentNode; // original skills div
+let skillsOutput = document.getElementById('skillsOutput'); // output skills element
+
+htmlButton.onclick = moveButton;
+htmlButton.onmouseover = hoverButton;
+htmlButton.onmouseout = hoverButtonOut;
+
+cssButton.onclick = moveButton;
+cssButton.onmouseover = hoverButton;
+cssButton.onmouseout = hoverButtonOut;
+
+jsButton.onclick = moveButton;
+jsButton.onmouseover = hoverButton;
+jsButton.onmouseout = hoverButtonOut;
+
+function moveButton() {
+    if (this.parentNode == skillsInput) {
+        skillsOutput.appendChild(this);
+    } else {
+        skillsInput.appendChild(this);
+    }
+}
+
+function hoverButton() {
+    if (this.parentNode == skillsOutput) {
+        this.classList.remove('btn-success');
+        this.classList.add('btn-danger');
+    }
+}
+
+function hoverButtonOut() {
+    this.classList.remove('btn-danger');
+    this.classList.add('btn-success');
+}
